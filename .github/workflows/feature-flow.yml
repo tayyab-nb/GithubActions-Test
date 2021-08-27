@@ -1,1 +1,7 @@
+name: Feature Flown
+
+on:
+  push:
+    branches:
+      - 'feature/new-feature'
 
