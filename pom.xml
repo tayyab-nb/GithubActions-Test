@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.tayyab-nb.gc</groupId>
+	<groupId>com.tayyab-nb.GithubActions-Test</groupId>
 	<artifactId>noticeboard</artifactId>
 	<version>1.0.10</version>
 	<name>noticeboard</name>
@@ -274,7 +274,7 @@
 		<repository>
 			<id>github</id>
 			<name>NoticeBoard Simple CRUD application</name>
-			<url>https://maven.pkg.github.com/tayyab-nb/NoticeBoard</url>
+			<url>https://maven.pkg.github.com/tayyab-nb/GithubActions-Test</url>
 		</repository>
 	</distributionManagement>
 
