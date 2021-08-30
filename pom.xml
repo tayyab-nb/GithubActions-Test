@@ -17,7 +17,7 @@
 	<description>Notice Board CRUD application</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 		<org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
 		<org.projectlombok.version>1.18.10</org.projectlombok.version>
 		<code.coverage.exclusions>
@@ -139,6 +139,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.16.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
