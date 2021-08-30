@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.wkrzywiec.medium</groupId>
+	<groupId>com.tayyab-nb.gc</groupId>
 	<artifactId>noticeboard</artifactId>
 	<version>1.0.10</version>
 	<name>noticeboard</name>
