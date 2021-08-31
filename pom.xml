@@ -12,7 +12,7 @@
 
 	<groupId>com.tayyab-nb.GithubActions-Test</groupId>
 	<artifactId>noticeboard</artifactId>
-	<version>1.0.15</version>
+	<version>1.0.16</version>
 	<name>noticeboard</name>
 	<description>Notice Board CRUD application</description>
 
