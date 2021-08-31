@@ -45,20 +45,25 @@ jobs:
     name: Publish - ECR
     runs-on: ubuntu-18.04
     needs: [test]
-    env:
-      REPO: ${{ secrets.DOCKER_REPO }}
-
+   
     steps:
-    - uses: actions/checkout@v2
-    - uses: docker://ghcr.io/kciter/aws-ecr-action:latest
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        account_id: ${{ secrets.AWS_ACCOUNT_ID }}
-        repo: docker/repo
-        region: ap-northeast-2
-        tags: latest,${{ github.sha }}
-        create_repo: true
-        image_scanning_configuration: true
-        set_repo_policy: true
-        repo_policy_file: repo-policy.json
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+      
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: my-ecr-repo
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
