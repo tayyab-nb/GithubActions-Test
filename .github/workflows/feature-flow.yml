@@ -46,7 +46,8 @@ jobs:
         with:
           commit-message: Updated workflow with PR
           branch: develop
-
+          assignees: tayyab-nb
+          
   ECR:
     name: Publish - ECR
     runs-on: ubuntu-18.04
