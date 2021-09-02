@@ -28,6 +28,8 @@ jobs:
     name: Publish - GitHub Packages
     runs-on: ubuntu-18.04
     needs: [test]
+    environment:
+      name: Staging
 
     steps:
       - uses: actions/checkout@v2
